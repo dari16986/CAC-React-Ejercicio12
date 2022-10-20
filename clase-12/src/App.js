@@ -1,5 +1,7 @@
 import './App.css';
 import Movies from './components/movies/Movies';
+import Nav from './components/navbar/Navbar'
+
 
 const movieData = [
   {
@@ -1807,8 +1809,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Movies Collection</h1>
-      <hr />
+      <Nav />  
       <Movies data={[]}>
         {myDataList}
       </Movies>
