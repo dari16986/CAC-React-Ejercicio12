@@ -1803,6 +1803,7 @@ const movieData = [
 
 
 function App() {
+
     const myDataList = movieData.map((element, i) => {
         return (<img key={i} src={element.posterUrl} alt={element.title} width={200} />)
     });
