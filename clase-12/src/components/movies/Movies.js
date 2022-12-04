@@ -5,12 +5,8 @@ export default function Movies(props) {
 
     const [count, setCount] = useState(10);
 
-    const myList = props.data.map((element) => {
-        return (<h2> {element} </h2>)
-    });
-
-    const transformedChildren = props.children.map((element) => {
-        return (<div className="card p-2">{element}</div>)
+    const transformedChildren = props.children.map((element,i) => {
+        return (<div key={i} className="card p-2">{element}</div>)
 
     });
 
@@ -23,17 +19,17 @@ export default function Movies(props) {
         if(count>=transformedChildren.length) setCount(transformedChildren.length)
     }
 
-    return (<>
+    return (<div>
     
         <Button className="btn btn-success p-3 m-3" onClick={agregarPelicula}>Agregar Pelicula</Button>
         <Button className="btn btn-danger p-3 m-3" onClick={quitarPelicula}>Quitar Pelicula</Button>
          
         <h2>Cantidad de películas: {count}</h2>
        
-        <div className="d-flex flex-row flex-wrap">
+        <div className="d-flex flex-row flex-wrap" >
         {transformedChildren.slice(0, count)}
-        {myList}
+
         </div>
-    </>);
+    </div>);
 };
 
