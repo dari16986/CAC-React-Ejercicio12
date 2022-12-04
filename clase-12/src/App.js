@@ -1811,7 +1811,7 @@ function App() {
     return (
         <div className="App">
             <Nav />
-            <Movies data={[]}>
+            <Movies>
                 {myDataList}
             </Movies>
         </div>
